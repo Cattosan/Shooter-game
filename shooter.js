@@ -4,11 +4,13 @@ var duid = 0;
 function loadImages() {
 	enemyImage = new Image();
 	shipImage = new Image();
+	shipupgradedImage = new Image();
 	bulletImage = new Image();
 	bulletupgradedImage = new Image();
 
 	enemyImage.src = "Images/enemy.png";
 	shipImage.src = "Images/player.png";
+	shipupgradedImage.src = "Images/playerupgraded.png";
 	bulletImage.src = "Images/bullet.png";
 	bulletupgradedImage.src = "Images/bulletupgraded.png";
 }
@@ -155,8 +157,8 @@ function bullet(x, y, speed) {
 function enemy(x, y, speed) {
 	this.x = x;
 	this.y = y;
-	this.w = 50;
-	this.h = 50;
+	this.w = 70;
+	this.h = 70;
 	this.state = "active"
 	this.speed = speed;
 
@@ -212,7 +214,6 @@ function draw() {
 	ctx.fillText("Score "+": "+countEnemy, 10, 50);
 	ctx.fillText("Lives  "+": "+lives, 10, 85);
 	ctx.fillText("Duid   "+": $ "+duid, 10, 125);
-
 }
 
 function update() {
